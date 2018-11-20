@@ -358,36 +358,6 @@ Below is another example of creating a graph and manipulating its components, ju
 ![png](index_files/index_39_1.png)
 
 
-## Graphs From Adjacency Matrix
-Adjacency Matrix is a 2D array of size n x n where n is the number of vertices in a graph. Let the 2D array be $adj[][]$, a slot $adj[i][j] = 1$ indicates that there is an edge from vertex i to vertex j. 
-
-Adjacency matrix for undirected graph is always symmetric. Adjacency Matrix is also used to represent weighted graphs. If $adj[i][j] = w$, then there is an edge from vertex i to vertex j with weight w. Look at the example below:
-
-
-<img src="g1.png" width=300>
-
-Above graph can be shown using an adjacency matrix as shown here
-
-<img src="am1.png" width=300>
-
-Given an adjacency matrix generate a networkx graph. Above matrix  `[[0, 1, 0, 0, 1], [1, 0, 1, 1, 1], [0, 1, 0, 1, 0], [0, 1, 1, 0, 1], [1, 1, 0, 1, 0]]` can be set up as below:
-
-```python
-# Create a graph from given adjacency matrix 
-adj_matrix = np.array([[0, 1, 0, 0, 1], [1, 0, 1, 1, 1], [0, 1, 0, 1, 0], [0, 1, 1, 0, 1], [1, 1, 0, 1, 0]])
-G = nx.from_numpy_matrix(adj_matrix)
-nx.draw(G, with_labels=True)
-```
-
-
-```python
-# Code here 
-```
-
-
-![png](index_files/index_42_0.png)
-
-
 ## Erdos-Reyni Graph Generator
 
 
@@ -428,47 +398,7 @@ nx.draw(G, with_labels=True)
 
 
 
-![png](index_files/index_44_1.png)
-
-
-We can extract our adjacency matrix for a graph by simply converting into a numpy matrix (2-d array). It is a standard way to visualize large matrices in order to identify any interesting links as shown below:
-
-```python
-# Create an adjacency matrix from a graph , Visualize the matrix 
-matrix = nx.to_numpy_matrix(G)
-# print matrix
-plt.style.use('seaborn-dark')
-fig = plt.figure()
-ax = fig.add_subplot(1,1,1)
-ax.set_aspect('equal')
-plt.imshow(matrix, interpolation='nearest', cmap=plt.cm.gray)
-plt.show()
-matrix
-```
-
-
-```python
-# Code here 
-```
-
-
-![png](index_files/index_46_0.png)
-
-
-
-
-
-    matrix([[0., 1., 0., 0., 1., 1., 1., 0., 0., 1.],
-            [1., 0., 1., 0., 1., 0., 1., 1., 0., 1.],
-            [0., 1., 0., 0., 0., 1., 1., 0., 0., 1.],
-            [0., 0., 0., 0., 1., 1., 1., 1., 1., 1.],
-            [1., 1., 0., 1., 0., 1., 1., 1., 1., 1.],
-            [1., 0., 1., 1., 1., 0., 1., 0., 0., 0.],
-            [1., 1., 1., 1., 1., 1., 0., 1., 0., 0.],
-            [0., 1., 0., 1., 1., 0., 1., 0., 1., 1.],
-            [0., 0., 0., 1., 1., 0., 0., 1., 0., 0.],
-            [1., 1., 1., 1., 1., 0., 0., 1., 0., 0.]])
-
+![png](index_files/index_41_1.png)
 
 
 ## Adding Node attributes
@@ -496,7 +426,7 @@ nx.draw(G,labels=nx.get_node_attributes(G,'name'),node_size=5000)
 ```
 
 
-![png](index_files/index_49_0.png)
+![png](index_files/index_44_0.png)
 
 
 We can also use lists to ease the process of adding new attributes to a graph as shown below:
@@ -593,7 +523,7 @@ plt.show()
 ```
 
 
-![png](index_files/index_58_0.png)
+![png](index_files/index_53_0.png)
 
 
 ## Summary 
