@@ -4,12 +4,12 @@
 
 In this code along styled lab, we shall get an introduction to the popular graph library in Python, known as `NetworkX`. We shall see how to implement a basic graph while defining its edges, nodes and corresponding weights. We shall also look at visualizing a graph in Python. 
 
-## Objectives:
+## Objectives
 You will be able to:
-* Understand how to draw basic graphs in `networkx`
+* Understand how to draw basic graphs in networkx
 * Use different ways to add nodes and edges to a graph
 * Set node and edge attributes and access the network information from the stored dictionary structure
-* Visualize a `networkx` graph with customizations using `matplotlib`
+* Visualize a networkx graph with customizations using matplotlib
 
 **Note: It is imperative that you consult the the [`networkx` documentation](https://networkx.github.io/documentation/networkx-1.10/index.html) while going through this and upcoming lessons to experiment with graph methods, customizations, algorithms etc. ** 
 
@@ -28,7 +28,7 @@ NetworkX also comes packaged with a lot of network algorithms for detailed netwo
 <img src="example.png" width=900>
 
 
-### When to use NetworkX
+## When to use NetworkX
 Unlike many other tools, NetworkX is designed to handle data on a scale relevant to common modern problems. 
 Most of the core algorithms rely on extremely fast legacy code highly flexible graph implementations. So as mentioned above, a node/edge can be any data types. 
 
@@ -36,7 +36,7 @@ However, Large-scale problems may require faster approaches (i.e. massive networ
 
 Anyway, for this section, we can start off with NetworkX and look at the sort of problems that network analysis can solve for us. 
 
-### Import NetworkX
+## Import NetworkX
 
 We shall first pip install networkX and import it into our working environment, the usual Python way. 
 
@@ -59,7 +59,7 @@ warnings.filterwarnings('ignore')
 # Code here 
 ```
 
-### Creating a new Graph 
+## Creating a new Graph 
 
 Graph is just a collection of nodes(vertices) with edges(links) etc. Below is how you create a graph in networkx. First we shall create an instance of graph as shown below:
 ```python
@@ -72,7 +72,7 @@ G = nx.Graph()
 # Code here 
 ```
 
-### Adding nodes
+## Adding nodes
 
 Adding node and nodes using `add_node` and `add_nodes_from` methods. As mentioned earlier, in NetworkX, nodes can be any hashable object e.g. a text string, an image. We can also define a node as an XML object with key value pairs . A node can also be another graph. Below is how you would add a node to the graph we created earlier. 
 ```python
@@ -92,7 +92,7 @@ G.add_node(math.cos)
 # Code here 
 ```
 
-### Viewing nodes
+## Viewing nodes
 
 Nodes can be easily viewed using `graph.nodes()` method. 
 ```python
@@ -149,7 +149,7 @@ G.nodes()
 
 
 
-### `path_graph()`
+## `path_graph()`
 NetworkX has a lot of graph generators. [`path_graph` is one of them](https://networkx.github.io/documentation/networkx-1.10/reference/generated/networkx.generators.classic.path_graph.html), which creates interconnected nodes. 
 
 ```python
@@ -181,7 +181,7 @@ print(G.nodes())
     [1, 'one', 3, 'second', <built-in function cos>, 2, 'node4', 0, 4, 5, 6]
 
 
-### Adding Edges
+## Adding Edges
 
 Okie so let's talk about adding edges to random nodes we have created above. An edge between nodes show some sort of property or relationship that connects the nodes together. Edges are added using `add_edge()` method with node specification as shown below:
 
@@ -212,7 +212,7 @@ G.add_edges_from(list_of_edges)
 # Code here 
 ```
 
-### Viewing Edges
+## Viewing Edges
 
 Similar to viewing nodes, edges can be viewed using `graph.edges()` method.
 
@@ -229,7 +229,7 @@ print(G.edges())
     [(3, 2), ('second', 0), ('second', 'node4'), (2, 'node4'), ('node4', 0), (4, 5)]
 
 
-### Inspecting number of Edges and Nodes
+## Inspecting number of Edges and Nodes
 
 At any stage during the graph development, we can check the total number of nodes and edges in the graph using one of the following criteria. 
 
@@ -250,7 +250,7 @@ print(G.number_of_edges(), len(G.edges()))
     6 6
 
 
-### Visualizing the graph 
+## Visualizing the graph 
 
 A simple graph can be visualized using `networkx.draw(graph)` method. Let's try to visualize the graph we have created above with nodes and edges. 
 
@@ -284,7 +284,7 @@ nx.draw(G, with_labels = True )
 ![png](index_files/index_30_0.png)
 
 
-### Removing nodes and edges
+## Removing nodes and edges
 
 Nodes and edges, already added to the graph can be removed using the `remove_node` and `remove_edge` methods as shown below. 
 
@@ -320,7 +320,7 @@ print(G.edges())
     [(3, 2), (2, 'node4'), (4, 5)]
 
 
-### Clearing the Network 
+## Clearing the Network 
 
 A graph can be reset/cleared at any stage using the `graph.clear()` method. 
 
@@ -338,7 +338,7 @@ print(G.nodes(), G.edges())
     [] []
 
 
-### Quick recap 
+## Quick recap 
 
 Below is another example of creating a graph and manipulating its components, just to summarize what we have seen above. Look at how we can use `graph.degree` to calculate the number of nodes connected to each node. 
 
