@@ -43,7 +43,7 @@ We shall first pip install networkX and import it into our working environment, 
 
 ```python
 # Install NetworkX if not currently installed
-!pip uninstall networkx
+!pip install networkx
 
 import networkx as nx
 import matplotlib.pyplot as plt
